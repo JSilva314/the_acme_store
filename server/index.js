@@ -113,10 +113,14 @@ const init = async () => {
 
   console.log(`curl localhost:3000/api/user/${donatello.id}/product`);
 
-  console.log(`curl -X POST localhost:3000/api/user/${donatello.id}/product -d '{"skill_id": "${staff.id}"}' -H 'Content-Type:application/json'`);
-  console.log(`curl -X DELETE localhost:3000/api/user/${donatello.id}/product/${product[3].id}`);
-  
-  console.log('data seeded');
+  console.log(
+    `curl -X POST localhost:3000/api/user/${donatello.id}/product -d '{"product_id": "${staff.id}"}' -H 'Content-Type:application/json'`
+  );
+  console.log(
+    `curl -X DELETE localhost:3000/api/user/${donatello.id}/product/${product[3].id}`
+  );
+
+  console.log("data seeded");
 
   const port = process.env.PORT || 3000;
   app.listen(port, () => console.log(`listening on port ${port}`));
